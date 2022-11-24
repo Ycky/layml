@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'main/css/main.html' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color:white;
+      padding:25px;
+    }
+
+    .block_{
+      width: 60%;
+      margin-left: 380px;
+    }
+     .jumbotron{
+     background-image: url("../images/sky.jpg");
+     }
+
+    #img_1{
+      float: left;
+    }
+    .Cente{
+      margin-left: 500px;
+    }
+    .vl {
+    border-left: 6px solid green;
+    height: 60px;
+    margin-left: 18%;
+    }
+    .jum_on{
+      background-color: black;
+    }
+
+    #img_{
+      float: left;
+    }
+
+    .text_of_img{
+      width: 50%;
+    }
+
+    #sky_{
+      background:black;
+    }
+    .text_img{
+      margin-bottom:;
+      margin-bottom: ;
+    }
+  </style>
+</head>
+<body>
+  {% include 'main/blocks/header.html' %}
+  {% block content %}
+
+  {% endblock %}
+  {% include 'main/blocks/footer.html' %}
+
+</body>

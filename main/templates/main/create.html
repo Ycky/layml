@@ -1,0 +1,20 @@
+{% extends 'main/main.html' %}
+{% load static %}
+
+{% block title %}Добавление{% endblock %}
+
+{% block content %}
+     <div class="features">
+       <h1>Добавление</h1>
+       <form method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           {{ form.title }}<br>
+           {{ form.type }}<br>
+           {{ form.image }}<br>
+           {{ form.description }}<br>
+           {{ form.price }}<br>
+           <span>{{ error }}</span>
+           <button class="btn btn-success" type="submit">Добав</button>
+       </form>
+    </div>
+{% endblock %}

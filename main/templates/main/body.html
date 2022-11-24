@@ -1,0 +1,152 @@
+{% extends 'main/main.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'create' %}">create</a>
+<a href="{% url 'create' %}">creat</a>
+
+<body>
+  <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <a class="navbar-brand" href="#">LIMELIGHT</a>
+     </div>
+     <div class="collapse navbar-collapse" id="myNavbar" style="margin-bottom:60px;">
+      <ul class="nav navbar-nav navbar-right">
+        <li><img src="../images/home.jpg" width="30" style="margin-top: 7px;"></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Fonts</a></li>
+        <li><a href="#">Templates</a></li>
+        <li><a href="#">Icons</a></li>
+        <li><a href="#">Wordpress</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h1>Premium Design Graphic Resource Center</h1>
+        <p>we offen highquality design resourses such as fonts, icon sets, web templates, backgrounds, and much much more for FREE!</p>
+        <p>join our mailing list & receive a new freebie everyday!</p>
+      </div>
+    </div>
+
+      <form action=" http://127.0.0.1:8000/search/" target="_blank"></form>
+      <input type="hidden" name="searchid" value="808327">
+      <input type="search" name="text" style="font-size: 20px;" />
+      <input type="submit" value="find" style="color:white; background-color: green;font-size: 20px;margin-left: 5px;">
+
+  </div>
+</div>
+<div class="container bg-3 text-center">
+  <h1 class="vl">Fresh Freebie</h1>
+  <p>Download Till Your Heart's Content!</p><br>
+
+<div class="container">
+  <div id="articles" class="row">
+    <div class="col-sm-4">
+        {% for el in juice %}
+            <h4>{{ el.title}}</h4>
+            <img src="{{ el.image.url }}" class="img-thumbnail" width="304" height="236">
+            <a href="{% url 'juice-detail' el.id %}" class="btn btn-warning" style="color:white;background-color: lightgreen; border-radius:50% ;">❯</a>
+            <p>{{ el.description }}</p>
+         {% endfor %}
+    </div>
+
+     <a href="MORE FREEBIES" style="margin-top: -2px;"></a><button id="runbtn" style="color:white;background-color: lightgreen;">MORE FREEBIE❯ </button>
+  </div>
+</div>
+</div><br>
+
+  <div class="Cente">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <img  src="../images/1k.jpg" width="40">
+      </li>
+
+      <li class="nav-item">
+        <h4>I absolutely love your freebies! Anytime I have to design a<br>template and i'm looking for resources,I come to your site first!</h4>
+      </li>
+
+      <li class="nav-item " style="padding-left: 550px; padding -bottom: 50px;">
+        <img src="../images/k.jpg" width="40">
+     </li>
+    </ul>
+  </div>
+
+<div class=" bg-3 ">
+    <style>
+.vl {
+    border-left: 6px solid green;
+    height: 60px;
+}
+ </style>
+ <h1 class="vl">Latest News</h1>
+  <p class="vl">Find out What's Going On</p><br>
+  <div class="media">
+    {% for el in news %}
+      <div class="block_">
+        <div class="media-left">
+          <br>
+          <img src="{{ el.image.url }}" class="media-object" width="200px" >
+        </div>
+        <div class="media-body">
+          <h3>{{ el.title }}</h3>
+          <p>{{ el.price }}</p>
+          <h4 class="description">
+              {{ el.details }}
+          </h4>
+            <a href="{% url 'news-detail' el.id %}" class="btn btn-warning" style="border-radius: 50%;">❯ Read more</a>
+        </div>
+       </div>
+      </div>
+    {% endfor %}<br>
+
+  <div class="jumbotron jum_on" id="sky_">
+   <div class="container">
+    <h4 style="color:white;">Visit Our Shop</h4>
+    <img class="col-sm-3" id="img_" src="../images/gapple.jpg" width="200" height="150">
+    <h5 class="text_of_img" style="color: white;">Grab some of our premium templates,icons,and graphics from our store.We strive to dring you the highest quality digital products.</h5>
+    <button id="runbtn" style="color: white;background-color: green;">LETS SHOP ❯ </button>
+  </div>
+  <div class="container">
+    <br>
+    <h3 style="color:white;">Laters Tweets </h3>
+  </div>
+    <img src="../images/tw.jpg"  width="35"><h4 style="color:white;">Confucuis:Life is really simple,but we insist on making it complicated <br>#famousquotes</h4><h6 style="color:white;">8 mobs ago</h6>
+    <img src="../images/tw.jpg" width="35"><h4 style="color:white;">Bruce Lee:if you love life,don't waste time,for time is what life is made up of.<br>#famousquotes</h4><h6 style="color:white;">2 days ago</h6>
+  </div>
+  </div>
+  </div>
+
+<footer class="container-fluid text-center">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <img src="../images/tw.jpg" style="width:40px;margin-left: 8px;">
+      <img src="../images/f.jpg" style="width:40px;margin-left: 8px;"><img src="../images/pin.jpg" style="width:40px;margin-left: 8px;"><img src="../images/g.jpg" style="width:40px;margin-left: 8px;">
+      <span class="left"> &copy; Copyright 2022 DesignerFirst.com</span>
+    </div>
+</footer>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/main.html' %}
+
+{% block title %}{{article.title }}{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>{{ article.title }}</h1>
+      <p>{{ article.image}}</p>
+      <p>{{ article.description}}</p>
+      <p>{{ article.price}}</p>
+      <a href="{% url 'juice-delete' article.id %}" class="btn btn-danger">delete</a>
+      <a href="{% url 'juice-update' article.id %}" class="btn btn-info">rename</a>
+  </div>
+{% endblock %}
