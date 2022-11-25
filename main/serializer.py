@@ -14,3 +14,9 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
         fields = '__all__'
+
+
+class ShopSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News
+        fields = '__all__'

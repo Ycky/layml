@@ -9,8 +9,10 @@ urlpatterns = [
     path('news/creat/',views.creat,name='creat'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
+    path('shop/', views.shop, name='shop'),
 
     path('juice/',JuiceAPIList.as_view()),
+    path('shop/',SjopAPIList.as_view()),
     # path('juice/<int:pk>', JuiceAPIUpdate.as_view()),
     # path('juicedelete/<int:pk>/', JuiceAPIDestroyView.as_view()),
 

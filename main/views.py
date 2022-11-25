@@ -7,7 +7,9 @@ from main.forms import *
 from main.models import *
 from main.serializer import *
 
-
+class SjopAPIList(generics.ListCreateAPIView):
+    queryset = Shop.objects.all()
+    serializer_class = ShopSerializer
 class JuiceAPIList(generics.ListCreateAPIView):
     queryset = Juice.objects.all()
     serializer_class = JuiceSerializer
@@ -158,3 +160,7 @@ def logout(request):
 
 def dashboard(request):
     return render(request,'main/dashboard.html')
+
+def shop(request):
+    shop = Shop.objects.all()
+    return render(request, 'main/shop.html',{'shop':shop})

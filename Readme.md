@@ -32,4 +32,6 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
+<img src="main/static/main/image/1.jpg">
+
 ## License
